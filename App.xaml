@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:pr28"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock" x:Key="mainTbStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="36"/>
+        </Style>
+        <Style TargetType="Thumb">
+            <Setter Property="Background" Value="#FFE74C3C"/>
+            <!-- Красный -->
+            <Setter Property="BorderBrush" Value="#FFC0392B"/>
+        </Style>
     </Application.Resources>
 </Application>
