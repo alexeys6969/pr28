@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="pr28.Elements.RentItm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:pr28.Elements"
+             mc:Ignorable="d">
+    <Border CornerRadius="10,10,10,10" Background="#201d1d" BorderBrush="#00f52a" BorderThickness="1" Margin="10,5,10,5">
+        <Grid Margin="10,5,10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="КиберКлуб" x:Name="nameClub" Style="{StaticResource mainTbStyle}" FontSize="18" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock Text="6 января 16:00" x:Name="dateRent" Style="{StaticResource mainTbStyle}" FontSize="14" FontWeight="Light" Grid.Column="0" Margin="10,5,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock Text="Николаев Николай Иванович" x:Name="nameClient" Style="{StaticResource mainTbStyle}" FontSize="14" FontWeight="Light" Grid.Column="0" Margin="10,5,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1">
+                <Button Content="Изменить" Click="editRent" Grid.Column="1" Margin="5,10,5,0" VerticalAlignment="Center" Style="{StaticResource RoundedButton}" Height="20"/>
+                <Button Content="Удалить" Click="deleteRent" Grid.Column="1" Margin="5,10,5,0" VerticalAlignment="Center" Style="{StaticResource RoundedButton}" Height="20"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

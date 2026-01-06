@@ -13,16 +13,18 @@ namespace pr28.Classes
         {
             try
             {
-                if(connection.State != System.Data.ConnectionState.Open)
+                if (connection.State != System.Data.ConnectionState.Open)
                 {
                     connection.Open();
                 }
 
                 var command = new MySqlCommand(query, connection);
                 return command.ExecuteReader();
-            } catch(Exception)
+            }
+            catch (Exception)
             {
                 return null;
             }
         }
+    }
 }

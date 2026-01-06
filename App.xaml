@@ -10,10 +10,14 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="36"/>
         </Style>
-        <Style TargetType="Thumb">
-            <Setter Property="Background" Value="#FFE74C3C"/>
-            <!-- Красный -->
-            <Setter Property="BorderBrush" Value="#FFC0392B"/>
+
+        <Style x:Key="RoundedButton" TargetType="Button">
+            <Setter Property="Background" Value="#201d1d"/>
+            <Setter Property="BorderBrush" Value="#00f52a"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="10"/>
+
         </Style>
     </Application.Resources>
 </Application>

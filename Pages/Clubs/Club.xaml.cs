@@ -23,6 +23,12 @@ namespace pr28.Pages.Clubs
         public Club()
         {
             InitializeComponent();
+            MainWindow.mainWindow.LoadClubs();
+            var clubs = MainWindow.mainWindow.clubs;
+            foreach (var club in clubs)
+            {
+                parent.Children.Add(new Elements.ClubItm(club));
+            }
         }
     }
 }
