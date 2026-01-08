@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pr28.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,22 @@ namespace pr28.Pages.Rents
     /// </summary>
     public partial class Rent : Page
     {
-        public Rent()
+        ClubCs club;
+        public Rent(ClubCs _club)
         {
             InitializeComponent();
+            club = _club;
+            MainWindow.mainWindow.LoadRents(club.id);
+            var rents = MainWindow.mainWindow.rents;
+            foreach (var rent in rents)
+            {
+                parent.Children.Add(new Elements.RentItm(rent));
+            }
+        }
+
+        private void exit(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.frame.Navigate(new Pages.Clubs.Club());
         }
     }
 }

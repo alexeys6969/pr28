@@ -24,7 +24,7 @@ namespace pr28
     {
         public static MainWindow mainWindow;
         public List<ClubCs> clubs = new List<ClubCs>();
-        public static List<RentCs> rents = new List<RentCs>();
+        public List<RentCs> rents = new List<RentCs>();
         public static string connection = "Server=localhost;Port=3307;Uid=root;Database=computerClub";
         public MainWindow()
         {
@@ -46,6 +46,26 @@ namespace pr28
                     reader.GetInt32(0),
                     reader.GetString(1),
                     reader.GetString(2)
+                    ));
+            }
+            mySqlConnection.Close();
+        }
+
+        public void LoadRents(int clubId)
+        {
+            rents.Clear();
+            MySqlConnection mySqlConnection = new MySqlConnection(connection);
+            mySqlConnection.Open();
+            string query = $"SELECT * FROM rents JOIN club ON rents.idClub = club.id WHERE idClub = {clubId}";
+            MySqlDataReader reader = Connection.Query(query, mySqlConnection);
+            while (reader.Read())
+            {
+                rents.Add(new RentCs(
+                    reader.GetInt32(0),
+                    reader.GetDateTime(1),
+                    reader.GetString(2),
+                    reader.GetInt32(3),
+                    reader.GetString(5)
                     ));
             }
             mySqlConnection.Close();

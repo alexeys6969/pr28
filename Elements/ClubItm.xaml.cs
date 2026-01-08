@@ -42,7 +42,7 @@ namespace pr28.Elements
 
         private void checkRent(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.mainWindow.frame.Navigate(new Pages.Rents.Rent(club));
         }
     }
 }

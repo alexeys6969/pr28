@@ -14,7 +14,10 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Border BorderBrush="#00f52a" BorderThickness="0,0,0,2">
-            <TextBlock Text="Аренды клуба " x:Name="rentOfClub" Style="{StaticResource mainTbStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid>
+                <TextBlock Text="Аренды клуба " x:Name="rentOfClub" Style="{StaticResource mainTbStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Content="Назад" Padding="25,5,25,5" Click="exit" Margin="25,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource RoundedButton}"/>
+            </Grid>
         </Border>
         <ScrollViewer Grid.Row="1" Background="#312f2f">
             <StackPanel x:Name="parent">

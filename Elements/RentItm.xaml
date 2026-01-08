@@ -12,9 +12,9 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <TextBlock Text="КиберКлуб" x:Name="nameClub" Style="{StaticResource mainTbStyle}" FontSize="18" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock Text="Николаев Николай Иванович" x:Name="nameClient" Style="{StaticResource mainTbStyle}" FontSize="18" Grid.Column="0" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock Text="КиберКлуб" x:Name="nameClub" Style="{StaticResource mainTbStyle}" FontSize="14" FontWeight="Light" Grid.Column="0" Margin="10,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 <TextBlock Text="6 января 16:00" x:Name="dateRent" Style="{StaticResource mainTbStyle}" FontSize="14" FontWeight="Light" Grid.Column="0" Margin="10,5,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <TextBlock Text="Николаев Николай Иванович" x:Name="nameClient" Style="{StaticResource mainTbStyle}" FontSize="14" FontWeight="Light" Grid.Column="0" Margin="10,5,10,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             </StackPanel>
             
             <StackPanel Grid.Column="1">
