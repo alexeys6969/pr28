@@ -104,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Elements\AddBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Elements\ClubItm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +127,9 @@
     <Compile Include="Classes\ClubCs.cs" />
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\RentCs.cs" />
+    <Compile Include="Elements\AddBtn.xaml.cs">
+      <DependentUpon>AddBtn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Elements\ClubItm.xaml.cs">
       <DependentUpon>ClubItm.xaml</DependentUpon>
     </Compile>
@@ -137,6 +144,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Clubs\ClubAddOrEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Rents\Rent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +156,9 @@
   <ItemGroup>
     <Compile Include="Pages\Clubs\Club.xaml.cs">
       <DependentUpon>Club.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Clubs\ClubAddOrEdit.xaml.cs">
+      <DependentUpon>ClubAddOrEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Rents\Rent.xaml.cs">
       <DependentUpon>Rent.xaml</DependentUpon>

@@ -26,6 +26,7 @@ namespace pr28.Pages.Rents
         {
             InitializeComponent();
             club = _club;
+            rentOfClub.Text += club.name;
             MainWindow.mainWindow.LoadRents(club.id);
             var rents = MainWindow.mainWindow.rents;
             foreach (var rent in rents)

@@ -24,5 +24,7 @@ namespace pr28.Classes
             this.name = name;
             this.adress = adress;
         }
+
+        public ClubCs() { }
     }
 }

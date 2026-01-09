@@ -32,12 +32,24 @@ namespace pr28.Elements
 
         private void editClub(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.mainWindow.frame.Navigate(new Pages.Clubs.ClubAddOrEdit(club));
         }
 
         private void deleteClub(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                var deleteDialogResult = MessageBox.Show($"Вы точно хотите удалить клуб {club.name}?", "Удаление", MessageBoxButton.YesNo);
+                if(deleteDialogResult == MessageBoxResult.Yes)
+                {
+                    MainWindow.mainWindow.DeleteClubs(club);
+                    MessageBox.Show("Запрос выполнен");
+                    MainWindow.mainWindow.frame.Navigate(new Pages.Clubs.Club());
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void checkRent(object sender, RoutedEventArgs e)

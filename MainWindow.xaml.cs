@@ -51,6 +51,58 @@ namespace pr28
             mySqlConnection.Close();
         }
 
+        public void AddClubs(ClubCs club)
+        {
+            using (var connect = new MySqlConnection(connection))
+            {
+                connect.Open();
+                string query = "INSERT INTO club (name, adress) VALUES (@name, @adress);";
+                using(var command = new MySqlCommand(query, connect))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@name", club.name);
+                        command.Parameters.AddWithValue("@adress", club.adress);
+                        command.ExecuteNonQuery();
+                    } catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                        return;
+                    }
+                }
+            }
+        }
+
+        public void UpdateClubs(ClubCs club)
+        {
+            using(var connect = new MySqlConnection(connection))
+            {
+                connect.Open();
+                string query = "UPDATE club set name = @name, adress = @adress WHERE id = @id";
+                using(var command = new MySqlCommand(query, connect))
+                {
+                    command.Parameters.AddWithValue("@name", club.name);
+                    command.Parameters.AddWithValue("@adress", club.adress);
+                    command.Parameters.AddWithValue("@id", club.id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void DeleteClubs(ClubCs club)
+        {
+            using(var connect = new MySqlConnection(connection))
+            {
+                connect.Open();
+                string query = "DELETE FROM club where id = @id";
+                using(var command = new MySqlCommand(query, connect))
+                {
+                    command.Parameters.AddWithValue("@id", club.id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void LoadRents(int clubId)
         {
             rents.Clear();

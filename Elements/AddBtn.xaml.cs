@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pr28.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,23 +14,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace pr28.Pages.Clubs
+namespace pr28.Elements
 {
     /// <summary>
-    /// Логика взаимодействия для Club.xaml
+    /// Логика взаимодействия для AddBtn.xaml
     /// </summary>
-    public partial class Club : Page
+    public partial class AddBtn : UserControl
     {
-        public Club()
+        ClubCs newClub;
+        public AddBtn()
         {
             InitializeComponent();
-            MainWindow.mainWindow.LoadClubs();
-            var clubs = MainWindow.mainWindow.clubs;
-            foreach (var club in clubs)
-            {
-                parent.Children.Add(new Elements.ClubItm(club));
-            }
-            parent.Children.Add(new Elements.AddBtn());
+        }
+
+        private void Add(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.frame.Navigate(new Pages.Clubs.ClubAddOrEdit(newClub));
         }
     }
 }
