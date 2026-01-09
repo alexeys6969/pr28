@@ -31,6 +31,18 @@
             <Setter Property="FontFamily" Value="Bahnschrift"/>
         </Style>
 
+        <Style x:Key="datePicker" TargetType="DatePicker">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="25,10,25,0"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="#201d1d"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#201d1d"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+        </Style>
+
         <Style x:Key="RoundedButton1" TargetType="Button">
             <Setter Property="Background" Value="#201d1d"/>
             <Setter Property="Foreground" Value="White"/>

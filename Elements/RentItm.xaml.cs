@@ -22,10 +22,12 @@ namespace pr28.Elements
     public partial class RentItm : UserControl
     {
         RentCs rent;
-        public RentItm(RentCs _rent)
+        ClubCs club;
+        public RentItm(RentCs _rent, ClubCs _club)
         {
             InitializeComponent();
             rent = _rent;
+            club = _club;
             nameClub.Text = rent.nameClub;
             dateRent.Text = rent.time_rent.ToString("dd MMMM HH:mm");
             nameClient.Text = rent.name_client;
@@ -33,12 +35,25 @@ namespace pr28.Elements
 
         private void editRent(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.mainWindow.frame.Navigate(new Pages.Rents.RentClubOrEdit(rent, club));
         }
 
         private void deleteRent(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                var deleteDialogResult = MessageBox.Show($"Вы точно хотите удалить аренду {rent.name_client}?", "Удаление", MessageBoxButton.YesNo);
+                if (deleteDialogResult == MessageBoxResult.Yes)
+                {
+                    MainWindow.mainWindow.DeleteRents(rent);
+                    MessageBox.Show("Запрос выполнен");
+                    MainWindow.mainWindow.frame.Navigate(new Pages.Rents.Rent(club));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

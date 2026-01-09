@@ -122,5 +122,52 @@ namespace pr28
             }
             mySqlConnection.Close();
         }
+
+        public void AddRents(RentCs rent)
+        {
+            using(var connect = new MySqlConnection(connection))
+            {
+                connect.Open();
+                string query = "INSERT INTO rents (time_rent, full_name_client, idClub) values (@time, @name, @idClub)";
+                using(var command = new MySqlCommand(query, connect))
+                {
+                    command.Parameters.AddWithValue("@time", rent.time_rent);
+                    command.Parameters.AddWithValue("@name", rent.name_client);
+                    command.Parameters.AddWithValue("@idClub", rent.idClub);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void UpdateRents(RentCs rent)
+        {
+            using(var connect = new MySqlConnection(connection))
+            {
+                connect.Open();
+                string query = "UPDATE rents SET time_rent = @time, full_name_client = @name, idClub = @idClub WHERE id = @id";
+                using(var command = new MySqlCommand(query, connect))
+                {
+                    command.Parameters.AddWithValue("@time", rent.time_rent);
+                    command.Parameters.AddWithValue("@name", rent.name_client);
+                    command.Parameters.AddWithValue("@idClub", rent.idClub);
+                    command.Parameters.AddWithValue("@id", rent.id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void DeleteRents(RentCs rent)
+        {
+            using(var connect = new MySqlConnection(connection))
+            {
+                connect.Open();
+                string query = "DELETE FROM rents WHERE id = @id";
+                using(var command = new MySqlCommand(query, connect))
+                {
+                    command.Parameters.AddWithValue("@id", rent.id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

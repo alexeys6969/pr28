@@ -108,6 +108,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Elements\AddRentBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Elements\ClubItm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +133,9 @@
     <Compile Include="Classes\RentCs.cs" />
     <Compile Include="Elements\AddBtn.xaml.cs">
       <DependentUpon>AddBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\AddRentBtn.xaml.cs">
+      <DependentUpon>AddRentBtn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Elements\ClubItm.xaml.cs">
       <DependentUpon>ClubItm.xaml</DependentUpon>
@@ -152,6 +159,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Rents\RentClubOrEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\Clubs\Club.xaml.cs">
@@ -162,6 +173,9 @@
     </Compile>
     <Compile Include="Pages\Rents\Rent.xaml.cs">
       <DependentUpon>Rent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Rents\RentClubOrEdit.xaml.cs">
+      <DependentUpon>RentClubOrEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

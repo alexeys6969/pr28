@@ -31,8 +31,9 @@ namespace pr28.Pages.Rents
             var rents = MainWindow.mainWindow.rents;
             foreach (var rent in rents)
             {
-                parent.Children.Add(new Elements.RentItm(rent));
+                parent.Children.Add(new Elements.RentItm(rent, club));
             }
+            parent.Children.Add(new Elements.AddRentBtn(club));
         }
 
         private void exit(object sender, RoutedEventArgs e)

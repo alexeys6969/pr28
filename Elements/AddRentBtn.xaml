@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="pr28.Elements.AddRentBtn"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:pr28.Elements"
+             mc:Ignorable="d">
+    <Button Content="Добавить" Click="Add" HorizontalAlignment="Center" BorderThickness="1" Margin="30,10,30,0" Padding="100,0,100,0" Style="{StaticResource RoundedButton1}"/>
+
+</UserControl>
